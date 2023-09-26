@@ -1,0 +1,32 @@
+﻿  Task1.cpp
+C:\Users\bkras\source\repos\sfml\lab1\Task1\Task1\Task1.cpp(19,37): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: static class sf::RenderStates const sf::RenderStates::Default" (__imp_?Default@RenderStates@sf@@2V12@B).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: static class sf::Color const sf::Color::White" (__imp_?White@Color@sf@@2V12@B).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: virtual class sf::Vector2<float> __thiscall sf::CircleShape::getPoint(unsigned int)const " (__imp_?getPoint@CircleShape@sf@@UBE?AV?$Vector2@M@2@I@Z).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: virtual unsigned int __thiscall sf::CircleShape::getPointCount(void)const " (__imp_?getPointCount@CircleShape@sf@@UBEIXZ).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: __thiscall sf::CircleShape::CircleShape(float,unsigned int)" (__imp_??0CircleShape@sf@@QAE@MI@Z).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: void __thiscall sf::Transformable::setPosition(float,float)" (__imp_?setPosition@Transformable@sf@@QAEXMM@Z).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: virtual __thiscall sf::RenderWindow::~RenderWindow(void)" (__imp_??1RenderWindow@sf@@UAE@XZ).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: __thiscall sf::RenderWindow::RenderWindow(class sf::VideoMode,class sf::String const &,unsigned int,struct sf::ContextSettings const &)" (__imp_??0RenderWindow@sf@@QAE@VVideoMode@1@ABVString@1@IABUContextSettings@1@@Z).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: static class sf::Color const sf::Color::Red" (__imp_?Red@Color@sf@@2V12@B).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: static class sf::Color const sf::Color::Black" (__imp_?Black@Color@sf@@2V12@B).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: static class sf::Color const sf::Color::Yellow" (__imp_?Yellow@Color@sf@@2V12@B).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: void __thiscall sf::Window::display(void)" (__imp_?display@Window@sf@@QAEXXZ).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: void __thiscall sf::Window::setVerticalSyncEnabled(bool)" (__imp_?setVerticalSyncEnabled@Window@sf@@QAEX_N@Z).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: bool __thiscall sf::Window::pollEvent(class sf::Event &)" (__imp_?pollEvent@Window@sf@@QAE_NAAVEvent@2@@Z).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: bool __thiscall sf::Window::isOpen(void)const " (__imp_?isOpen@Window@sf@@QBE_NXZ).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: void __thiscall sf::Window::close(void)" (__imp_?close@Window@sf@@QAEXXZ).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: static class sf::Color const sf::Color::Green" (__imp_?Green@Color@sf@@2V12@B).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: void __thiscall sf::RenderTarget::draw(class sf::Drawable const &,class sf::RenderStates const &)" (__imp_?draw@RenderTarget@sf@@QAEXABVDrawable@2@ABVRenderStates@2@@Z).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: void __thiscall sf::RenderTarget::clear(class sf::Color const &)" (__imp_?clear@RenderTarget@sf@@QAEXABVColor@2@@Z).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) private: virtual void __thiscall sf::Shape::draw(class sf::RenderTarget &,class sf::RenderStates)const " (__imp_?draw@Shape@sf@@EBEXAAVRenderTarget@2@VRenderStates@2@@Z).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: void __thiscall sf::Shape::setFillColor(class sf::Color const &)" (__imp_?setFillColor@Shape@sf@@QAEXABVColor@2@@Z).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: __thiscall sf::String::String(wchar_t const *)" (__imp_??0String@sf@@QAE@PB_W@Z).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: __thiscall sf::RectangleShape::RectangleShape(class sf::Vector2<float> const &)" (__imp_??0RectangleShape@sf@@QAE@ABV?$Vector2@M@1@@Z).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: __thiscall sf::VideoMode::VideoMode(unsigned int,unsigned int,unsigned int)" (__imp_??0VideoMode@sf@@QAE@III@Z).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: __thiscall sf::CircleShape::CircleShape(class sf::CircleShape &&)" (__imp_??0CircleShape@sf@@QAE@$$QAV01@@Z).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: __thiscall sf::CircleShape::CircleShape(class sf::CircleShape const &)" (__imp_??0CircleShape@sf@@QAE@ABV01@@Z).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: virtual __thiscall sf::CircleShape::~CircleShape(void)" (__imp_??1CircleShape@sf@@UAE@XZ).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: virtual __thiscall sf::RectangleShape::~RectangleShape(void)" (__imp_??1RectangleShape@sf@@UAE@XZ).
+Task1.obj : error LNK2001: неразрешенный внешний символ "__declspec(dllimport) public: __thiscall sf::String::~String(void)" (__imp_??1String@sf@@QAE@XZ).
+C:\Users\bkras\source\repos\sfml\lab1\Task1\Release\Task1.exe : fatal error LNK1120: неразрешенных внешних элементов: 29
