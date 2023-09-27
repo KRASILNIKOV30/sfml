@@ -12,7 +12,7 @@ void AddRect(float x, float y, float len, float rotate, std::vector<sf::Rectangl
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(800, 600), L"Новый проект", sf::Style::Default);
+    sf::RenderWindow window(sf::VideoMode(800, 600), "Initials", sf::Style::Default);
 
     window.setVerticalSyncEnabled(true);
     std::vector<sf::RectangleShape> shapes;

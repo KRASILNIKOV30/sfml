@@ -3,7 +3,7 @@
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(400, 800), L"Новый проект", sf::Style::Default);
+    sf::RenderWindow window(sf::VideoMode(400, 800), "Traffic Light", sf::Style::Default);
 
     window.setVerticalSyncEnabled(true);
 

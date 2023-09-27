@@ -3,7 +3,7 @@
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(800, 800), L"Новый проект", sf::Style::Default);
+    sf::RenderWindow window(sf::VideoMode(800, 800), "House", sf::Style::Default);
 
     window.setVerticalSyncEnabled(true);
 
