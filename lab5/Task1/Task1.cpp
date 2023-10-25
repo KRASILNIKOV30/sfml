@@ -45,7 +45,11 @@ void Update(sf::Vector2f const& mousePosition, sf::ConvexShape& pointer, const d
 	mouseDegrees = mouseDegrees > 0 ? mouseDegrees : 360 + mouseDegrees;
 	const double arrowDegrees = pointer.getRotation();
 	double degreesDelta = mouseDegrees - arrowDegrees;
-	degreesDelta = std::abs(degreesDelta) > 180 ? std::min(mouseDegrees, arrowDegrees) + 360 - std::max(mouseDegrees, arrowDegrees) : degreesDelta;
+	degreesDelta = std::abs(degreesDelta) > 180
+		? degreesDelta > 0
+			? -(std::min(mouseDegrees, arrowDegrees) + 360 - std::max(mouseDegrees, arrowDegrees))
+			: (std::min(mouseDegrees, arrowDegrees) + 360 - std::max(mouseDegrees, arrowDegrees))
+		: degreesDelta;
 	const double speed = degreesDelta / t;
 	degreesDelta = speed > 0 ? std::min(ROTATION_SPEED * t, degreesDelta) : std::max(-ROTATION_SPEED * t, degreesDelta);
 	pointer.rotate(static_cast<float>(degreesDelta));
