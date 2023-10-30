@@ -17,17 +17,24 @@ float toDegrees(const float radians)
 
 void Init(sf::ConvexShape& pointer)
 {
-	pointer.setPointCount(3);
-	pointer.setPoint(0, { 40, 0 });
-	pointer.setPoint(1, { -20, -20 });
-	pointer.setPoint(2, { -20, 20 });
+	pointer.setPointCount(7);
+	pointer.setPoint(0, { 0, 0 });
+	pointer.setPoint(1, { 30, 0 });
+	pointer.setPoint(2, { 30, -20 });
+	pointer.setPoint(3, { 60, 10 });
+	pointer.setPoint(4, { 30, 40 });
+	pointer.setPoint(5, { 30, 20 });
+	pointer.setPoint(6, { 0, 20 });
+	pointer.setOrigin(30, 10);
 	pointer.setPosition(400, 300);
-	pointer.setFillColor(sf::Color::Red);
+	pointer.setFillColor(sf::Color::Yellow);
+	pointer.setOutlineThickness(3);
+	pointer.setOutlineColor(sf::Color::Black);
 }
 
 void DrawFrame(sf::RenderWindow& window, sf::ConvexShape const& pointer)
 {
-	window.clear(sf::Color::Black);
+	window.clear(sf::Color::White);
 	window.draw(pointer);
 	window.display();
 }
@@ -45,14 +52,21 @@ void Update(sf::Vector2f const& mousePosition, sf::ConvexShape& pointer, const d
 	mouseDegrees = mouseDegrees > 0 ? mouseDegrees : 360 + mouseDegrees;
 	const double arrowDegrees = pointer.getRotation();
 	double degreesDelta = mouseDegrees - arrowDegrees;
-	degreesDelta = std::abs(degreesDelta) > 180
-		? degreesDelta > 0
-			? -(std::min(mouseDegrees, arrowDegrees) + 360 - std::max(mouseDegrees, arrowDegrees))
-			: (std::min(mouseDegrees, arrowDegrees) + 360 - std::max(mouseDegrees, arrowDegrees))
-		: degreesDelta;
+	if (std::abs(degreesDelta) > 180)
+	{
+		const double max = std::max(mouseDegrees, arrowDegrees);
+		const double min = std::min(mouseDegrees, arrowDegrees);
+		degreesDelta = degreesDelta > 0 ? -(min + 360 - max) : (min + 360 - max);
+	}
 	const double speed = degreesDelta / t;
 	degreesDelta = speed > 0 ? std::min(ROTATION_SPEED * t, degreesDelta) : std::max(-ROTATION_SPEED * t, degreesDelta);
 	pointer.rotate(static_cast<float>(degreesDelta));
+	if (std::abs(degreesDelta) < 10e-3)
+	{
+		const double deltaLength = std::sqrt(delta.x * delta.x + delta.y * delta.y);
+		const sf::Vector2<double> direction = sf::Vector2(delta.x / deltaLength, delta.y / deltaLength);
+		pointer.move(direction.x * SPEED * t, direction.y * SPEED * t);
+	}
 }
 
 void PollEvents(sf::RenderWindow& window, sf::Vector2f& mousePosition)
