@@ -1,0 +1,4 @@
+﻿  Task2.cpp
+C:\Users\bkras\source\repos\sfml\lab3\Task2\Task2.cpp(55,40): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\bkras\source\repos\sfml\lab3\Task2\Task2.cpp(55,23): warning C4244: инициализация: преобразование "double" в "const float", возможна потеря данных
+  Task2.vcxproj -> C:\Users\bkras\source\repos\sfml\lab3\x64\Debug\Task2.exe

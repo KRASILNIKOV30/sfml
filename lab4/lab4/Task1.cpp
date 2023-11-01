@@ -7,7 +7,7 @@
 
 constexpr unsigned WINDOW_WIDTH = 800;
 constexpr unsigned WINDOW_HEIGHT = 600;
-constexpr int POINTER_MAX_SPEED = 15;
+constexpr int ROTATION_SPEED = 50;
 
 float toDegrees(const float radians)
 {
@@ -40,14 +40,19 @@ void Update(sf::Vector2f const& mousePosition, sf::ConvexShape& pointer, const d
 {
 	const sf::Vector2f delta = mousePosition - pointer.getPosition();
 	const float angle = std::atan2(delta.y, delta.x);
-	double degrees = toDegrees(angle);
-	const double speed = degrees / t;
-	if (std::abs(speed) > POINTER_MAX_SPEED)
+	double mouseDegrees = toDegrees(angle);
+	mouseDegrees = mouseDegrees > 0 ? mouseDegrees : 360 + mouseDegrees;
+	const double arrowDegrees = pointer.getRotation();
+	double degreesDelta = mouseDegrees - arrowDegrees;
+	if (std::abs(degreesDelta) > 180)
 	{
-		degrees = speed > 0 ? POINTER_MAX_SPEED * t : -POINTER_MAX_SPEED * t;
+		const double max = std::max(mouseDegrees, arrowDegrees);
+		const double min = std::min(mouseDegrees, arrowDegrees);
+		degreesDelta = degreesDelta > 0 ? -(min + 360 - max) : (min + 360 - max);
 	}
-
-	pointer.rotate(static_cast<float>(degrees));
+	const double speed = degreesDelta / t;
+	degreesDelta = speed > 0 ? std::min(ROTATION_SPEED * t, degreesDelta) : std::max(-ROTATION_SPEED * t, degreesDelta);
+	pointer.rotate(static_cast<float>(degreesDelta));
 }
 
 void PollEvents(sf::RenderWindow& window, sf::Vector2f& mousePosition)
